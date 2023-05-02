@@ -25,4 +25,3 @@ const RecentJobs = () => {
 }
 
 export default RecentJobs
-
