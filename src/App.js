@@ -1,5 +1,5 @@
-import RecentJobs from "./Components/RecentJobs";
-import Header from "./Components/Header";
+import RecentJobs from "./components/RecentJobs";
+import Header from "./components/Header";
 
 
 const App = () => {
