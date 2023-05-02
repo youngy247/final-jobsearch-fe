@@ -1,7 +1,5 @@
 const RecentJobs = () => {
 
-
-
     return (
         <div className='container'>
             <table className="table table-dark table-striped">
