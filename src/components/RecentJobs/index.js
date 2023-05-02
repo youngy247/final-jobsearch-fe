@@ -35,8 +35,10 @@ const RecentJobs = () => {
                             <p className="h4">{job["job_title"]}</p>
                             <p>{job.company}</p>
                         </td>
-                        <td className="row-span-2"><button className="btn btn-primary">{job.type}</button></td>
-                        <td className="row-span-2">£{roundedSalary}</td>
+                        <td className="row-span-2">
+                            {job.type ? <button className="btn btn-primary">{job.type}</button> : ""}
+                        </td>
+                        <td className="row-span-2">{roundedSalary ? `£${roundedSalary}` : ""}</td>
                         <td className="row-span-2">
                             {job.skills.map((skill) => {
                                 return <button className="btn btn-secondary">{skill.skill}</button>
