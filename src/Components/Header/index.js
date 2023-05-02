@@ -1,19 +1,19 @@
 const Header = () => {
     return (
-        <header className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+        <header className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between align-items-center py-1 px-1">
             <div>
-                <h1 className="navbar-brand " href="#">JobSearch</h1>
+                <h1 className="navbar-brand mx-3" href="#">JobSearch</h1>
             </div>
             <div>
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="#">All Jobs</a>
+                        <a className="nav-link active" href="#">All Jobs</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Full Time</a>
+                        <a className="nav-link" href="#">Full time</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Part Time</a>
+                        <a className="nav-link" href="#">Part time</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Contract</a>
@@ -21,7 +21,7 @@ const Header = () => {
                 </ul>
             </div>
             <div>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Post a Job</button>
+                <button className="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="submit">Post a job</button>
             </div>
         </header>
     )
