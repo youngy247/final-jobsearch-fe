@@ -20,8 +20,8 @@ const JobDetail = () => {
         <>
             <div class="container">
             <div class="row d-flex">
-            <p class="fs-5"><strong>{data.job_title} - {data.company}</strong></p>
-            <button type="button" class="btn-close px-0 justify-content-end" disabled aria-label="Close"></button>
+            <p class="fs-6"><strong>{data.job_title} - {data.company}</strong></p>
+            <button type="button" class="btn-close" disabled aria-label="Close"></button>
         </div>
                 <hr class="py-0"></hr>
                 <div class="d-flex flex-row bg-primary text-white py-4">
@@ -30,7 +30,7 @@ const JobDetail = () => {
             </div>
             <div>
                 <img src={data.logo} />
-                <span>{data.company}</span>
+                <p><strong>{data.company}</strong></p>
             </div>
 
             <h2>Key facts:</h2>
