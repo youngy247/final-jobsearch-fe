@@ -1,11 +1,14 @@
+import RecentJobs from "./Components/RecentJobs";
 import Header from "./Components/Header";
 
+
 const App = () => {
-  return (
+    return (
         <>
-          <Header />
+            <RecentJobs/>
+            <Header/>
         </>
-  )
+    )
 }
 
 export default App
