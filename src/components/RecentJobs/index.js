@@ -25,6 +25,7 @@ const RecentJobs = () => {
             return [];
         } else {
             return data.map((job, key) => {
+                const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : "";
                 return renderToString(
                     <tr key={key}>
                         <td scope="row">
@@ -35,7 +36,7 @@ const RecentJobs = () => {
                             <p>{job.company}</p>
                         </td>
                         <td className="row-span-2"><button className="btn btn-primary">{job.type}</button></td>
-                        <td className="row-span-2">{job.salary}</td>
+                        <td className="row-span-2">£{roundedSalary}</td>
                         <td className="row-span-2">
                             {job.skills.map((skill) => {
                                 return <button className="btn btn-secondary">{skill.skill}</button>
@@ -44,7 +45,7 @@ const RecentJobs = () => {
                     </tr>
                 );
             });
-        }
+    }
     }
 
     return (
