@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import RecentJobs from "./Components/RecentJobs";
+import RecentJobs from "./components/RecentJobs";
 
 const App = () => {
   return (
