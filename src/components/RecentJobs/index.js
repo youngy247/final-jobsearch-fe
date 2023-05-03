@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
-import { renderToString } from "react-dom/server";
+import { useEffect, useState } from "react"
+import { renderToString } from "react-dom/server"
 
 const RecentJobs = () => {
-    const [recentJobs, setRecentJobs] = useState([]);
+    const [recentJobs, setRecentJobs] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:8080/jobs/recent")
             .then((res) => res.json())
             .then((res) => {
-                setRecentJobs(res);
-            });
-    }, []);
+                setRecentJobs(res)
+            })
+    }, [])
 
     useEffect(() => {
         const thead = document.querySelector("thead")
 
         thead.innerHTML = createTableHeader()
 
-        const tbody = document.querySelector("tbody");
+        const tbody = document.querySelector("tbody")
         if (tbody) {
-            tbody.innerHTML = createTableRows(recentJobs).join("");
+            tbody.innerHTML = createTableRows(recentJobs).join("")
         }
-    }, [recentJobs]);
+    }, [recentJobs])
 
     const createTableHeader = () => {
         return renderToString(
@@ -44,10 +44,10 @@ const RecentJobs = () => {
 
     const createTableRows = (data) => {
         if (!data) {
-            return [];
+            return []
         } else {
             return data.map((job, key) => {
-                const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : "";
+                const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : ""
                 return renderToString(
                     <tr key={key}>
                         <td scope="row">
@@ -67,9 +67,9 @@ const RecentJobs = () => {
                             })}
                         </td>
                     </tr>
-                );
-            });
-    }
+                )
+            })
+        }
     }
 
     return (
@@ -81,7 +81,7 @@ const RecentJobs = () => {
                 <tbody></tbody>
             </table>
         </div>
-    );
-};
+    )
+}
 
-export default RecentJobs;
+export default RecentJobs
