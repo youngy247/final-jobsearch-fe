@@ -10,7 +10,7 @@ const App = () => {
         <>
             <Header/>
             <SearchBar />
-            <RecentJobs/>
+            {/*<RecentJobs/>*/}
             <Footer />
         </>
     )
