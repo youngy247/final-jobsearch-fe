@@ -7,18 +7,14 @@ import {useEffect, useState} from "react";
 
 const App = () => {
 
-    const [selectedID, setSelectedID] = useState(8)
-    const changeSelectedID = () => {
-        setSelectedID(9)
-        console.log("function" + selectedID)
-    }
+    const [selectedID, setSelectedID] = useState(null)
 
     return (
         <>
             <Header/>
-            <RecentJobs selectedID={selectedID} changeSelectedID={changeSelectedID}/>
-            <DetailModal />
-            <Footer selectedID={selectedID} changeSelectedID={changeSelectedID}/>
+            <RecentJobs selectedID={selectedID} setSelectedID={setSelectedID}/>
+            <DetailModal selectedID={selectedID}/>
+            <Footer />
         </>
     )
 }
