@@ -1,8 +1,8 @@
 import './index.css'
-import React, { useState } from "react";
+import {useState} from "react";
 import RecentJobs from "../RecentJobs";
 
-const SearchBar = ({ setURL, URL }) => {
+const SearchBar = ({ setURL, URL, setSelectedID }) => {
 
     const [searched, setSearched] = useState(false);
 
@@ -72,7 +72,7 @@ const SearchBar = ({ setURL, URL }) => {
                     </form>
                 </div>
             </div>
-            <RecentJobs URL={URL} searched={searched} />
+            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID}/>
         </>
     );
 };
