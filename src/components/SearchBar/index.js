@@ -1,5 +1,5 @@
 import './index.css'
-import {useState} from "react";
+import { useState } from "react";
 import RecentJobs from "../RecentJobs";
 
 const SearchBar = ({ setURL, URL, setSelectedID }) => {
@@ -8,7 +8,7 @@ const SearchBar = ({ setURL, URL, setSelectedID }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSearched(true);
+        setSearched(`search=${URL}`);
     };
 
     const handleInputChange = (e) => {
@@ -72,7 +72,7 @@ const SearchBar = ({ setURL, URL, setSelectedID }) => {
                     </form>
                 </div>
             </div>
-            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID}/>
+            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID} />
         </>
     );
 };

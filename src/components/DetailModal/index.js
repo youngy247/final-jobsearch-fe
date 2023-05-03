@@ -38,6 +38,9 @@ const DetailModal = ({selectedID}) => {
                                         aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
+                                {loading && <p>Loading...</p>}
+                                {error && <p>Error: {error.message}</p>}
+                                {!loading && !error && (
                                 <div className="container">
 
                                     <div
@@ -91,6 +94,8 @@ const DetailModal = ({selectedID}) => {
                                         <p>{data.job_description}</p>
                                     </div>
                                 </div>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
