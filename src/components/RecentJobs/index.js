@@ -73,7 +73,8 @@ const RecentJobs = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container px-5">
+            <h3 className='fw-bold py-3'>Most recent jobs</h3>
             <table className="table table-dark table-striped">
                 <thead>
                 </thead>
