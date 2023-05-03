@@ -8,7 +8,6 @@ const RecentJobs = () => {
         fetch("http://localhost:8080/jobs/recent")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
                 setRecentJobs(res);
             });
     }, []);
@@ -52,7 +51,7 @@ const RecentJobs = () => {
                 return renderToString(
                     <tr key={key}>
                         <td scope="row">
-                            <img className="block" width='100' src={job.logo} alt="logo" />
+                            {window.innerWidth > 768 && <img className="block" width='100' src={job.logo} alt="logo" />}
                         </td>
                         <td>
                             <p className="h4">{job.job_title}</p>
@@ -63,8 +62,8 @@ const RecentJobs = () => {
                         </td>
                         <td className="row-span-2">{roundedSalary ? `£${roundedSalary}` : ""}</td>
                         <td className="row-span-2">
-                            {job.skills.map((skill) => {
-                                return <button className="btn btn-secondary">{skill.skill}</button>
+                            {job.skills.map((skill, index) => {
+                                return <button key={index} className="btn btn-secondary">{skill.skill}</button>
                             })}
                         </td>
                     </tr>
