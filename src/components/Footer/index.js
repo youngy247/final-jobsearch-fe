@@ -1,7 +1,7 @@
 
-const Footer = () => {
+const Footer = ({changeSelectedID, selectedID}) => {
     return(
-        <div className='container'>
+        <div className='container' onClick={changeSelectedID}>
             &copy; Copyright iO Academy 2022
         </div>
     )

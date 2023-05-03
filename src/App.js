@@ -3,14 +3,14 @@ import DetailModal from "./components/DetailModal";
 import Footer from "./components/Footer";
 import RecentJobs from "./components/RecentJobs";
 import Header from "./components/Header";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const App = () => {
 
-    const [selectedID, setSelectedID] = useState(0)
+    const [selectedID, setSelectedID] = useState(8)
     const changeSelectedID = () => {
         setSelectedID(9)
-        console.log(selectedID)
+        console.log("function" + selectedID)
     }
 
     return (
@@ -18,7 +18,7 @@ const App = () => {
             <Header/>
             <RecentJobs selectedID={selectedID} changeSelectedID={changeSelectedID}/>
             <DetailModal />
-            <Footer />
+            <Footer selectedID={selectedID} changeSelectedID={changeSelectedID}/>
         </>
     )
 }
