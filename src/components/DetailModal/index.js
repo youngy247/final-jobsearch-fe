@@ -76,4 +76,4 @@ const DetailModal = ({selectedID}) => {
     )
 }
 
-export default DetailModal;
+export default DetailModal

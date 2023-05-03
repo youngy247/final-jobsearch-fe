@@ -17,20 +17,20 @@ const RecentJobs = ({setSelectedID}) => {
             <h3 className="fw-bold py-3">Most recent jobs</h3>
             <table className="table table-dark table-striped">
                 <thead>
-                    <tr>
-                        <th className="col-5" colSpan="2" scope="col">
-                            Job Title/ Company
-                        </th>
-                        <th className="col-2" scope="col">
-                            Type
-                        </th>
-                        <th className="col-2" scope="col">
-                            Salary
-                        </th>
-                        <th className="col-3" scope="col">
-                            Skills
-                        </th>
-                    </tr>
+                <tr>
+                    <th className="col-5" colSpan="2" scope="col">
+                        Job Title/ Company
+                    </th>
+                    <th className="col-2" scope="col">
+                        Type
+                    </th>
+                    <th className="col-2" scope="col">
+                        Salary
+                    </th>
+                    <th className="col-3" scope="col">
+                        Skills
+                    </th>
+                </tr>
                 </thead>
                 <tbody>
                 {recentJobs.map((job, key) => {
