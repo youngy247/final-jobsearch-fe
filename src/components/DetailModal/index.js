@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-const DetailModal = () => {
+const DetailModal = ({selectedID}) => {
 
     const [data, setData] = useState({})
     const [skills, setSkills] = useState([])
 
-    const jobID = 412
-
     useEffect(() => {
-        fetch('http://localhost:8080/jobs/' + jobID)
+        fetch('http://localhost:8080/jobs/' + selectedID)
             .then (res => res.json())
             .then(data => {
                 setData(data)
                 setSkills(data.skills)
             })
-    }, [])
+    }, [selectedID])
 
 
     return (
         <>
-            {/*<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">*/}
-            {/*    Launch demo modal*/}
-            {/*</button>*/}
 
             <div className="modal fade" id="jobDetails" tabIndex="-1" aria-labelledby="jobDetailsLabel"
                  aria-hidden="true">
