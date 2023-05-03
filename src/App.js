@@ -3,7 +3,7 @@ import DetailModal from "./components/DetailModal";
 import Footer from "./components/Footer";
 import RecentJobs from "./components/RecentJobs";
 import Header from "./components/Header";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const App = () => {
 
@@ -12,9 +12,9 @@ const App = () => {
     return (
         <>
             <Header/>
-            <RecentJobs selectedID={selectedID} setSelectedID={setSelectedID}/>
-            <DetailModal selectedID={selectedID}/>
-            <Footer selectedID={selectedID} setSelectedID={setSelectedID}/>
+            <RecentJobs setSelectedID={setSelectedID} />
+            <DetailModal selectedID={selectedID} />
+            <Footer />
         </>
     )
 }
