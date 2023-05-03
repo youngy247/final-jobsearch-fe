@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from 'react';
-
-const DetailModal = ({selectedID}) => {
-
-    const [data, setData] = useState({})
-    const [skills, setSkills] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:8080/jobs/' + selectedID)
-            .then (res => res.json())
-            .then(data => {
-                setData(data)
-                setSkills(data.skills)
-            })
-    }, [selectedID])
-
+const DetailModal = ({data, setData, skills, setSkills, selectedID}) => {
 
     return (
         <>
-
             <div className="modal fade" id="jobDetails" tabIndex="-1" aria-labelledby="jobDetailsLabel"
                  aria-hidden="true">
                 <div className="modal-dialog modal-lg">
@@ -64,4 +48,4 @@ const DetailModal = ({selectedID}) => {
     )
 }
 
-export default DetailModal;
+export default DetailModal

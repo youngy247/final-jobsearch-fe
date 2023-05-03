@@ -1,40 +1,29 @@
-import './recent/jobs.css'
-import { useEffect, useState } from "react"
-import { renderToString } from "react-dom/server"
+import './displayjobs/jobs.css'
 
-const RecentJobs = ({setSelectedID, selectedID}) => {
-    const [recentJobs, setRecentJobs] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:8080/jobs/recent")
-            .then((res) => res.json())
-            .then((res) => {
-                setRecentJobs(res);
-            });
-    }, []);
+const DisplayJobs = ({setSelectedID, selectedID, displayJobs, setDisplayJobs}) => {
 
     return (
         <div className="container px-5">
             <h3 className='fw-bold py-3'>Most recent jobs</h3>
             <table className="table table-dark table-striped">
                 <thead>
-                <tr>
-                    <th className="col-5" colSpan="2" scope="col">
-                        Job Title/ Company
-                    </th>
-                    <th className="col-2" scope="col">
-                        Type
-                    </th>
-                    <th className="col-2" scope="col">
-                        Salary
-                    </th>
-                    <th className="col-3" scope="col">
-                        Skills
-                    </th>
-                </tr>
+                    <tr>
+                        <th className="col-5" colSpan="2" scope="col">
+                            Job Title/ Company
+                        </th>
+                        <th className="col-2" scope="col">
+                            Type
+                        </th>
+                        <th className="col-2" scope="col">
+                            Salary
+                        </th>
+                        <th className="col-3" scope="col">
+                            Skills
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
-                    {recentJobs.map((job, key) => (
+                    {displayJobs.map((job, key) => (
                         <tr key={key}>
                             <td scope="row">
                                 {window.innerWidth > 768 && <img className="block" width='100' src={job.logo} alt="logo" />}
@@ -58,7 +47,7 @@ const RecentJobs = ({setSelectedID, selectedID}) => {
                 </tbody>
             </table>
         </div>
-    );
-};
+    )
+}
 
-export default RecentJobs;
+export default DisplayJobs
