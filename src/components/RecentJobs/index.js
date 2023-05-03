@@ -14,13 +14,36 @@ const RecentJobs = () => {
     }, []);
 
     useEffect(() => {
+        const thead = document.querySelector("thead")
+
+        thead.innerHTML = createTableHeader()
+
         const tbody = document.querySelector("tbody");
         if (tbody) {
-            tbody.innerHTML = createRecentTable(recentJobs).join("");
+            tbody.innerHTML = createTableRows(recentJobs).join("");
         }
     }, [recentJobs]);
 
-    function createRecentTable(data) {
+    const createTableHeader = () => {
+        return renderToString(
+            <tr>
+                <th className="col-5" colSpan="2" scope="col">
+                    Job Title/ Company
+                </th>
+                <th className="col-2" scope="col">
+                    Type
+                </th>
+                <th className="col-2" scope="col">
+                    Salary
+                </th>
+                <th className="col-3" scope="col">
+                    Skills
+                </th>
+            </tr>
+        )
+    }
+
+    const createTableRows = (data) => {
         if (!data) {
             return [];
         } else {
@@ -29,10 +52,10 @@ const RecentJobs = () => {
                 return renderToString(
                     <tr key={key}>
                         <td scope="row">
-                            <img className="block" src={job["logo"]} alt="logo" />
+                            <img className="block" width='100' src={job.logo} alt="logo" />
                         </td>
                         <td>
-                            <p className="h4">{job["job_title"]}</p>
+                            <p className="h4">{job.job_title}</p>
                             <p>{job.company}</p>
                         </td>
                         <td className="row-span-2">
@@ -54,20 +77,6 @@ const RecentJobs = () => {
         <div className="container">
             <table className="table table-dark table-striped">
                 <thead>
-                <tr>
-                    <th className="col-6" colSpan="2" scope="col">
-                        Job Title/ Company
-                    </th>
-                    <th className="col-2" scope="col">
-                        Type
-                    </th>
-                    <th className="col-2" scope="col">
-                        Salary
-                    </th>
-                    <th className="col-2" scope="col">
-                        Skills
-                    </th>
-                </tr>
                 </thead>
                 <tbody></tbody>
             </table>
