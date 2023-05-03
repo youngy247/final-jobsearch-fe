@@ -73,7 +73,8 @@ const RecentJobs = () => {
     }
 
     return (
-        <div className="container px-5">
+        // mt-5 to push down from navbar so heading remains visible
+        <div className="container px-5 mt-5">
             <h3 className='fw-bold py-3'>Most recent jobs</h3>
             <table className="table table-dark table-striped">
                 <thead>
