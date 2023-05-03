@@ -2,9 +2,8 @@ import './index.css'
 import React, {useState} from "react";
 import RecentJobs from "../RecentJobs";
 
-const SearchBar = () => {
+const SearchBar = ({setURL,URL}) => {
 
-    const [URL, setURL] = useState('/recent')
     const [searched, setSearched] = useState(false)
 
     const handleSubmit = (e) => {
@@ -44,7 +43,7 @@ const SearchBar = () => {
                     </form>
                 </div>
             </div>
-            <RecentJobs/>
+            <RecentJobs URL={URL}/>
         </>
     )
 }

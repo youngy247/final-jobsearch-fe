@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { renderToString } from "react-dom/server"
+import SearchBar from "../SearchBar";
 
-const RecentJobs = () => {
+const RecentJobs = ({URL}) => {
     const [recentJobs, setRecentJobs] = useState([])
 
+
     useEffect(() => {
-        fetch("http://localhost:8080/jobs/recent")
+        fetch('http://localhost:8080/jobs' + URL)
             .then((res) => res.json())
             .then((res) => {
                 setRecentJobs(res)
