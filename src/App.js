@@ -3,7 +3,7 @@ import DetailModal from "./components/DetailModal";
 import Footer from "./components/Footer";
 import RecentJobs from "./components/RecentJobs";
 import Header from "./components/Header";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const App = () => {
 

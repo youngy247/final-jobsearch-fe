@@ -34,7 +34,7 @@ const RecentJobs = ({setSelectedID, selectedID}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {recentJobs.map((job, key) => (
+                    {recentJobs.map((job, key) => (
                         <tr key={key}>
                             <td scope="row">
                                 {window.innerWidth > 768 && <img className="block" width='100' src={job.logo} alt="logo" />}
