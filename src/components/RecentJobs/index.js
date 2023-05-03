@@ -51,7 +51,7 @@ const RecentJobs = () => {
                 return renderToString(
                     <tr key={key}>
                         <td scope="row">
-                            <img className="block" width='100' src={job.logo} alt="logo" />
+                            {window.innerWidth > 768 && <img className="block" width='100' src={job.logo} alt="logo" />}
                         </td>
                         <td>
                             <p className="h4">{job.job_title}</p>
