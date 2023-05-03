@@ -1,3 +1,5 @@
+import './recent/jobs.css'
+
 const RecentJobs = () => {
 
     return (
@@ -13,7 +15,13 @@ const RecentJobs = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row" className="jobLink" data-bs-toggle="modal" data-bs-target="#jobDetails">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row" className="jobLink" data-bs-toggle="modal" data-bs-target="#jobDetails">2</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>

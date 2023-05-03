@@ -19,11 +19,11 @@ const DetailModal = () => {
 
     return (
         <>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button>
+            {/*<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">*/}
+            {/*    Launch demo modal*/}
+            {/*</button>*/}
 
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+            <div className="modal fade" id="jobDetails" tabIndex="-1" aria-labelledby="jobDetailsLabel"
                  aria-hidden="true">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
@@ -66,7 +66,7 @@ const DetailModal = () => {
                 </div>
             </div>
         </>
-    );
+    )
 }
 
 export default DetailModal;
