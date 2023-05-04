@@ -25,7 +25,7 @@ const DetailModal = ({selectedID}) => {
 
     return (
         <>
-            <div class="container">
+            <div className="container">
 
                 <div className="modal fade" id="jobDetails" tabIndex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
@@ -54,7 +54,7 @@ const DetailModal = ({selectedID}) => {
                                     <div className="border border-5 border-light p-3">
 
                                         <div className="row mx-auto">
-                                            <div className="col-1 p-0"><img src={data.logo} class="mw-100"/></div>
+                                            <div className="col-1 p-0"><img src={data.logo} className="mw-100"/></div>
                                             <p className="col-11 m-0 align-self-center"><strong>{data.company}</strong></p>
                                         </div>
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const RecentJobs = ({setSelectedID,  searched}) => {
+const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
     const [recentJobs, setRecentJobs] = useState([]);
 
     useEffect(() => {
@@ -15,10 +15,17 @@ const RecentJobs = ({setSelectedID,  searched}) => {
             });
     }, [searched]);
 
+    const heading = searched ? "Search results" : "Most recent jobs";
+
+    const handleBackToRecentJobs = () => {
+        setSearched(false);
+        document.querySelector('input').value = ''
+    }
 
     return (
         <div className="container px-5">
-            <h3 className="fw-bold py-3">Most recent jobs</h3>
+            <h3 className="fw-bold py-3">{heading}</h3>
+            <button onClick={handleBackToRecentJobs}>Back to recent Jobs</button>
             <table className="table table-dark table-striped">
                 <thead>
                 <tr>

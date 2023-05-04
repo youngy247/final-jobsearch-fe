@@ -15,6 +15,8 @@ const SearchBar = ({ setURL, URL, setSelectedID }) => {
         setURL(e.target.value);
     };
 
+    // const textInput = document.querySelector('input')
+
     return (
         <>
             <div className="container-fluid searchBar p-4 mb-4">
@@ -72,7 +74,7 @@ const SearchBar = ({ setURL, URL, setSelectedID }) => {
                     </form>
                 </div>
             </div>
-            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID} />
+            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID} setSearched={setSearched}/>
         </>
     );
 };
