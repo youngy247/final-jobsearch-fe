@@ -70,7 +70,8 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                     </form>
                 </div>
             </div>
-            <DisplayJobs URL={URL}
+            <DisplayJobs setURL={setURL}
+                         URL={URL}
                          searched={searched}
                          setSelectedID={setSelectedID}
                          setSearched={setSearched}

@@ -1,14 +1,26 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
 import './index.css'
+import {useState} from "react";
 
-const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL}) => {
+const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL, setURL}) => {
+
+    const [jobFilter, setJobFilter] = useState('')
+    const [filterApplied, setFilterApplied] = useState(false)
 
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
         setSearched(false)
-        document.querySelector('input').value = ""
+        document.querySelector('input').value = ''
+        setFilterApplied(false)
     }
+
+    const changeJobFilter = (e) => {
+        setJobFilter(e)
+        setFilterApplied(true)
+        setSearched(true)
+    }
+
 
     return (
         <div className="container px-5">
@@ -36,49 +48,51 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
                 <tbody>
                 {displayJobs.map((job, key) => {
                     const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)).toLocaleString() : ""
-                    return (
-                        <tr key={key}>
-                            <td scope="row">
-                                {window.innerWidth > 768 && (
-                                    <img className="block" width="100" src={job.logo} alt="logo" />
-                                )}
-                            </td>
-                            <td>
-                                <p
-                                    className="h4 jobLink"
-                                    id={job.id}
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#jobDetails"
-                                    onClick={() => setSelectedID(job.id)}
-                                >
-                                    {job.job_title}
-                                </p>
-                                <p>{job.company}</p>
-                            </td>
-                            <td className="row-span-2">
-                                {job.type ? (
-                                    <button className="btn btn-primary">{job.type}</button>
-                                ) : (
-                                    ""
-                                )}
-                            </td>
-                            <td className="row-span-2">
-                                {roundedSalary ? `£${roundedSalary}` : ""}
-                            </td>
-                            <td className="row-span-2">
-                                {job.skills.map((skill, index) => {
-                                    return (
-                                        <span key={index}>
+                    if (jobFilter.includes(job.type) || filterApplied === false) {
+                        return (
+                            <tr key={key}>
+                                <td scope="row">
+                                    {window.innerWidth > 768 && (
+                                        <img className="block" width="100" src={job.logo} alt="logo" />
+                                    )}
+                                </td>
+                                <td>
+                                    <p
+                                        className="h4 jobLink"
+                                        id={job.id}
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#jobDetails"
+                                        onClick={() => setSelectedID(job.id)}
+                                    >
+                                        {job.job_title}
+                                    </p>
+                                    <p>{job.company}</p>
+                                </td>
+                                <td className="row-span-2">
+                                    {job.type ? (
+                                        <button className="btn btn-primary" onClick={() => changeJobFilter(job.type)}>{job.type}</button>
+                                    ) : (
+                                        ""
+                                    )}
+                                </td>
+                                <td className="row-span-2">
+                                    {roundedSalary ? `£${roundedSalary}` : ""}
+                                </td>
+                                <td className="row-span-2">
+                                    {job.skills.map((skill, index) => {
+                                        return (
+                                            <span key={index}>
                                             <button className="btn btn-secondary mb-1">
                                                 {skill.skill}
                                             </button>
                                             <span> </span>
                                         </span>
-                                    )
-                                })}
-                            </td>
-                        </tr>
-                    )
+                                        )
+                                    })}
+                                </td>
+                            </tr>
+                        )}
+                    else return (<tr key={key}></tr>)
                 })}
                 </tbody>
             </table>
