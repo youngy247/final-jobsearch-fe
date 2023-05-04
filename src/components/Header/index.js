@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light fixed-top">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">JobSearch</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

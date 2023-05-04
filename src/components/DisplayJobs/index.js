@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react"
 import "bootstrap-icons/font/bootstrap-icons.css"
+import './index.css'
 
-const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
-    const [recentJobs, setRecentJobs] = useState([])
-
-    useEffect(() => {
-        let url = "http://localhost:8080/jobs/recent"
-        if (searched) {
-            url = `http://localhost:8080/jobs?${searched}`
-        }
-        fetch(url)
-            .then((res) => res.json())
-            .then((res) => {
-                setRecentJobs(res)
-            })
-    }, [searched])
+const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs}) => {
 
     const heading = searched ? "Search results" : "Most recent jobs"
 
@@ -26,8 +13,8 @@ const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
     return (
         <div className="container px-5">
             <div className="d-flex justify-content-between">
-            <h3 className="fw-bold py-3">{heading}</h3>
-            {searched && <button onClick={handleBackToRecentJobs} className="btn-block text-primary bg-transparent border-0 fw-bold"> View most recent jobs <i className="bi bi-arrow-right" ></i> </button>}
+                <h3 className="fw-bold py-3">{heading}</h3>
+                {searched && <button onClick={handleBackToRecentJobs} className="btn-block text-primary bg-transparent border-0 fw-bold"> View most recent jobs <i className="bi bi-arrow-right" ></i> </button>}
             </div>
             <table className="table table-dark table-striped">
                 <thead>
@@ -47,7 +34,7 @@ const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
                 </tr>
                 </thead>
                 <tbody>
-                {recentJobs.map((job, key) => {
+                {displayJobs.map((job, key) => {
                     const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : "";
                     return (
                         <tr key={key}>
@@ -84,16 +71,16 @@ const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
                                         <button key={index} className="btn btn-secondary">
                                             {skill.skill}
                                         </button>
-                                    );
+                                    )
                                 })}
                             </td>
                         </tr>
-                    );
+                    )
                 })}
                 </tbody>
             </table>
         </div>
-    );
-};
+    )
+}
 
-export default RecentJobs;
+export default DisplayJobs

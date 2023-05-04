@@ -1,21 +1,18 @@
 import './index.css'
-import { useState } from "react";
-import RecentJobs from "../RecentJobs";
+import {useState} from "react";
+import DisplayJobs from "../DisplayJobs";
 
-const SearchBar = ({ setURL, URL, setSelectedID }) => {
+const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
 
-    const [searched, setSearched] = useState(false);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         setSearched(`search=${URL}`);
-    };
+    }
 
     const handleInputChange = (e) => {
         setURL(e.target.value);
-    };
-
-    // const textInput = document.querySelector('input')
+    }
 
     return (
         <>
@@ -74,7 +71,13 @@ const SearchBar = ({ setURL, URL, setSelectedID }) => {
                     </form>
                 </div>
             </div>
-            <RecentJobs URL={URL} searched={searched} setSelectedID={setSelectedID} setSearched={setSearched}/>
+            <DisplayJobs URL={URL}
+                         searched={searched}
+                         setSelectedID={setSelectedID}
+                         setSearched={setSearched}
+                         displayJobs={displayJobs}
+                         setDisplayJobs={setDisplayJobs}
+            />
         </>
     );
 };
