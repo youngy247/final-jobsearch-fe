@@ -14,7 +14,7 @@ const App = () => {
     const [selectedID, setSelectedID] = useState(1)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [searched, setSearched] = useState(false)
+    const [searched, setSearched] = useState("")
 
     useEffect(() => {
         let url = "http://localhost:8080/jobs/recent"

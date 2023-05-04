@@ -10,7 +10,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
-        setSearched(false)
+        setSearched("")
         document.querySelector('input').value = ''
         setFilterApplied(false)
     }
@@ -18,7 +18,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
     const changeJobFilter = (e) => {
         setJobFilter(e)
         setFilterApplied(true)
-        setSearched(true)
+        setSearched(searched + ' ')
     }
 
 
