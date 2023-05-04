@@ -1,5 +1,5 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
-import './index.css'
+import "./index.css"
 
 const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFilter, setJobFilter, filterApplied, setFilterApplied}) => {
 

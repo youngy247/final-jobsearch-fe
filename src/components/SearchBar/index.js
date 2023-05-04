@@ -1,4 +1,4 @@
-import './index.css'
+import "./index.css"
 import DisplayJobs from "../DisplayJobs"
 import React, { useState } from "react"
 
@@ -8,7 +8,7 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
     const [partTimeChecked, setPartTimeChecked] = useState(false)
     const [contractsChecked, setContractsChecked] = useState(false)
 
-    const [jobFilter, setJobFilter] = useState('')
+    const [jobFilter, setJobFilter] = useState("")
     const [filterApplied, setFilterApplied] = useState(false)
     const handleSubmit = (e) => {
         e.preventDefault()
