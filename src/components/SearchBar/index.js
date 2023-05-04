@@ -1,6 +1,6 @@
 import './index.css'
-import {useState} from "react"
 import DisplayJobs from "../DisplayJobs"
+import React from "react";
 
 const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
 
@@ -14,7 +14,7 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
     }
 
     return (
-        <>
+        <React.Fragment>
             <div className="container-fluid searchBar p-4 mb-4 mt-5">
                 <div className="content">
                     <form onSubmit={handleSubmit}>
@@ -77,7 +77,7 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                          displayJobs={displayJobs}
                          setDisplayJobs={setDisplayJobs}
             />
-        </>
+        </React.Fragment>
     )
 }
 

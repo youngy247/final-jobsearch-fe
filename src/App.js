@@ -47,7 +47,6 @@ const App = () => {
     return (
         <>
             <Header/>
-
             <SearchBar setURL={setURL}
                        URL={URL}
                        setSelectedID={setSelectedID}

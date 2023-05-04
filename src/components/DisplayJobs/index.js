@@ -68,12 +68,12 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
                             <td className="row-span-2">
                                 {job.skills.map((skill, index) => {
                                     return (
-                                        <>
-                                            <button key={index} className="btn btn-secondary mb-1">
+                                        <span key={index}>
+                                            <button className="btn btn-secondary mb-1">
                                                 {skill.skill}
                                             </button>
                                             <span> </span>
-                                        </>
+                                        </span>
                                     )
                                 })}
                             </td>
