@@ -117,7 +117,8 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
                     </form>
                 </div>
             </div>
-            <DisplayJobs URL={URL}
+            <DisplayJobs setURL={setURL}
+                         URL={URL}
                          searched={searched}
                          setSelectedID={setSelectedID}
                          setSearched={setSearched}

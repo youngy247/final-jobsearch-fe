@@ -8,14 +8,14 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFil
 
     const handleBackToRecentJobs = () => {
         setSearched("")
-        document.querySelector('input').value = ''
+        document.querySelector("input").value = ""
         setFilterApplied(false)
     }
 
     const changeJobFilter = (e) => {
         setJobFilter(e)
         setFilterApplied(true)
-        setSearched(searched + ' ')
+        setSearched(searched + " ")
     }
 
 
