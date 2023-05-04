@@ -51,14 +51,15 @@ const DetailModal = ({data, skills, loading, error}) => {
                                             <td>{data.type ? data.type.replace(' ', '\u00A0') : "Not specified"}</td>
                                             <td>{new Date(data.posted).toLocaleDateString()}</td>
                                             <td>
-                                                {skills && skills.map((element, i) =>
-                                                    <span key={i}>
+                                                {skills.length === 0 ? <p>Not specified</p> 
+                                                    : skills.map((element, i) =>
+                                                    <>
                                                         <span
                                                             className="rounded bg-info text-white py-0 px-1 fw-bold"
-                                                            >{element.skill}
+                                                            key={i}>{element.skill}
                                                         </span>
                                                         <span> </span>
-                                                    </span>
+                                                    </>
                                                 )}
                                             </td>
                                         </tr>
