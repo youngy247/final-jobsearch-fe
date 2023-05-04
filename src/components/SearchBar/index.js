@@ -1,17 +1,17 @@
 import './index.css'
 import {useState} from "react";
-import DisplayJobs from "../DisplayJobs";
+import DisplayJobs from "../DisplayJobs"
 
 const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setSearched(`search=${URL}`);
+        setSearched(`search=${URL}`)
     }
 
     const handleInputChange = (e) => {
-        setURL(e.target.value);
+        setURL(e.target.value)
     }
 
     return (
@@ -79,7 +79,7 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                          setDisplayJobs={setDisplayJobs}
             />
         </>
-    );
-};
+    )
+}
 
-export default SearchBar;
+export default SearchBar

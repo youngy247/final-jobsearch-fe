@@ -6,7 +6,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
-        setSearched(false);
+        setSearched(false)
         document.querySelector('input').value = ''
     }
 
@@ -35,7 +35,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
                 </thead>
                 <tbody>
                 {displayJobs.map((job, key) => {
-                    const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : "";
+                    const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : ""
                     return (
                         <tr key={key}>
                             <td scope="row">
