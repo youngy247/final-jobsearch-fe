@@ -1,7 +1,7 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
 import './index.css'
 
-const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL, setURL, jobFilter, setJobFilter, filterApplied, setFilterApplied}) => {
+const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFilter, setJobFilter, filterApplied, setFilterApplied}) => {
 
 
     const heading = searched ? "Search results" : "Most recent jobs"
