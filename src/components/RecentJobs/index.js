@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css"
 
 const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
     const [recentJobs, setRecentJobs] = useState([]);
@@ -24,8 +25,10 @@ const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
 
     return (
         <div className="container px-5">
+            <div className="d-flex justify-content-between">
             <h3 className="fw-bold py-3">{heading}</h3>
-            {searched && <button onClick={handleBackToRecentJobs}>Back to recent Jobs</button>}
+            {searched && <button onClick={handleBackToRecentJobs} className="btn-block text-primary bg-transparent border-0 fw-bold"> View most recent jobs <i className="bi bi-arrow-right" ></i> </button>}
+            </div>
             <table className="table table-dark table-striped">
                 <thead>
                 <tr>
