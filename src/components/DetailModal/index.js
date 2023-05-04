@@ -54,13 +54,13 @@ const DetailModal = ({data, skills, loading, error}) => {
                                                 <td>{new Date(data.posted).toLocaleDateString()}</td>
                                                 <td>
                                                     {skills && skills.map((element, i) =>
-                                                        <>
+                                                        <span key={i}>
                                                             <span
                                                                 className="rounded bg-info text-white py-0 px-1 fw-bold"
-                                                                key={i}>{element.skill}
+                                                                >{element.skill}
                                                             </span>
                                                             <span> </span>
-                                                        </>
+                                                        </span>
                                                     )}
                                                 </td>
                                             </tr>
