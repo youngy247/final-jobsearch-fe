@@ -4,43 +4,54 @@ import React, { useState } from "react"
 
 const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched }) => {
 
-    const [fullTimeChecked, setFullTimeChecked] = useState(false);
-    const [partTimeChecked, setPartTimeChecked] = useState(false);
-    const [contractsChecked, setContractsChecked] = useState(false);
+    const [fullTimeChecked, setFullTimeChecked] = useState(false)
+    const [partTimeChecked, setPartTimeChecked] = useState(false)
+    const [contractsChecked, setContractsChecked] = useState(false)
 
+    const [jobFilter, setJobFilter] = useState('')
+    const [filterApplied, setFilterApplied] = useState(false)
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
-        let queryString = URL;
-        if (fullTimeChecked) {
-            queryString += "&type[]=Full time";
-        }
-        if (partTimeChecked) {
-            queryString += "&type[]=Part time";
-        }
-        if (contractsChecked) {
-            queryString += "&type[]=Contracts";
+        if (!fullTimeChecked && !partTimeChecked && !contractsChecked){
+            setFilterApplied(false)
+        } else if (fullTimeChecked && !partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Full time")
+        } else if (fullTimeChecked && partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Full time Part time")
+        } else if (fullTimeChecked && partTimeChecked && contractsChecked) {
+            setFilterApplied(true)
+            setJobFilter("Full time Part time Contract")
+        } else if (!fullTimeChecked && partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Part time")
+        } else if (!fullTimeChecked && partTimeChecked && contractsChecked) {
+            setFilterApplied(true)
+            setJobFilter("Part time Contract")
+        } else {
+            setFilterApplied(true)
+            setJobFilter("Contract")
         }
 
-        setSearched(`search=${queryString}`)
-        setURL(`${URL}?${queryString}`)
-
+        setSearched(`search=${URL}`)
     }
 
     const handleInputChange = (e) => {
-        setURL(e.target.value);
+        setURL(e.target.value)
     }
 
     const handleFullTimeChange = (e) => {
-        setFullTimeChecked(e.target.checked);
+        setFullTimeChecked(e.target.checked)
     }
 
     const handlePartTimeChange = (e) => {
-        setPartTimeChecked(e.target.checked);
+        setPartTimeChecked(e.target.checked)
     }
 
     const handleContractsChange = (e) => {
-        setContractsChecked(e.target.checked);
+        setContractsChecked(e.target.checked)
     }
 
     return (
@@ -112,6 +123,13 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
                          setSearched={setSearched}
                          displayJobs={displayJobs}
                          setDisplayJobs={setDisplayJobs}
+                         fullTimeChecked={fullTimeChecked}
+                         partTimeChecked={partTimeChecked}
+                         contractsChecked={contractsChecked}
+                         jobFilter={jobFilter}
+                         setJobFilter={setJobFilter}
+                         filterApplied={filterApplied}
+                         setFilterApplied={setFilterApplied}
             />
         </>
     )
