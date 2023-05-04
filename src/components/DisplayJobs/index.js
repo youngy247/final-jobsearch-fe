@@ -4,21 +4,21 @@ import {useState} from "react";
 
 const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL, setURL}) => {
 
-    const [jobFilter, setJobFilter] = useState('')
+    const [jobFilter, setJobFilter] = useState("")
     const [filterApplied, setFilterApplied] = useState(false)
 
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
-        setSearched(false)
-        document.querySelector('input').value = ''
+        setSearched("")
+        document.querySelector('input').value = ""
         setFilterApplied(false)
     }
 
     const changeJobFilter = (e) => {
         setJobFilter(e)
         setFilterApplied(true)
-        setSearched(true)
+        setSearched(searched + " ")
     }
 
 
