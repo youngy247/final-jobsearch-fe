@@ -25,7 +25,7 @@ const RecentJobs = ({setSelectedID,  searched, setSearched}) => {
     return (
         <div className="container px-5">
             <h3 className="fw-bold py-3">{heading}</h3>
-            <button onClick={handleBackToRecentJobs}>Back to recent Jobs</button>
+            {searched && <button onClick={handleBackToRecentJobs}>Back to recent Jobs</button>}
             <table className="table table-dark table-striped">
                 <thead>
                 <tr>
