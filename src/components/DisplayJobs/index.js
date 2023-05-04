@@ -1,13 +1,13 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
 import './index.css'
 
-const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs}) => {
+const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL}) => {
 
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
         setSearched(false)
-        document.querySelector('input').value = ''
+        document.querySelector('input').value = ""
     }
 
     return (

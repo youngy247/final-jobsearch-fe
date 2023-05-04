@@ -46,7 +46,7 @@ const App = () => {
 
     return (
         <>
-            <Header/>
+            <Header setSearched={setSearched}/>
             <SearchBar setURL={setURL}
                        URL={URL}
                        setSelectedID={setSelectedID}
