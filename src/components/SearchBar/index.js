@@ -1,6 +1,6 @@
 import './index.css'
 import DisplayJobs from "../DisplayJobs"
-import React from "react";
+import React from "react"
 
 const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
 
