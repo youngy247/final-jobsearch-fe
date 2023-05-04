@@ -16,7 +16,7 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
 
     return (
         <>
-            <div className="container-fluid searchBar p-4 mb-4">
+            <div className="container-fluid searchBar p-4 mb-4 mt-5">
                 <div className="content">
                     <form onSubmit={handleSubmit}>
                         <p className="fs-1 my-2 mx-auto">Find your perfect job</p>
