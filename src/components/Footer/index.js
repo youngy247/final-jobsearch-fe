@@ -1,7 +1,6 @@
-
 const Footer = () => {
     return(
-        <div className='container'>
+        <div className="container">
             &copy; Copyright iO Academy 2022
         </div>
     )

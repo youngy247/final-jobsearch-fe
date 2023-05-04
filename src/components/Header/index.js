@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light fixed-top">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">JobSearch</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -23,7 +23,7 @@ const Header = () => {
                             <a className="nav-link">Contract</a>
                         </li>
                     </ul>
-                            <button className="btn btn-outline-success" type="submit">Post a job</button>
+                    <button className="btn btn-outline-success" type="submit">Post a job</button>
                 </div>
             </div>
         </nav>
