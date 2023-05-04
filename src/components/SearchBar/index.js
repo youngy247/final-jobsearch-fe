@@ -1,16 +1,57 @@
-import './index.css'
+import "./index.css"
 import DisplayJobs from "../DisplayJobs"
-import React from "react"
+import React, { useState } from "react"
 
-const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
+const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched }) => {
 
+    const [fullTimeChecked, setFullTimeChecked] = useState(false)
+    const [partTimeChecked, setPartTimeChecked] = useState(false)
+    const [contractsChecked, setContractsChecked] = useState(false)
+
+    const [jobFilter, setJobFilter] = useState("")
+    const [filterApplied, setFilterApplied] = useState(false)
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if (!fullTimeChecked && !partTimeChecked && !contractsChecked){
+            setFilterApplied(false)
+        } else if (fullTimeChecked && !partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Full time")
+        } else if (fullTimeChecked && partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Full time Part time")
+        } else if (fullTimeChecked && partTimeChecked && contractsChecked) {
+            setFilterApplied(true)
+            setJobFilter("Full time Part time Contract")
+        } else if (!fullTimeChecked && partTimeChecked && !contractsChecked){
+            setFilterApplied(true)
+            setJobFilter("Part time")
+        } else if (!fullTimeChecked && partTimeChecked && contractsChecked) {
+            setFilterApplied(true)
+            setJobFilter("Part time Contract")
+        } else {
+            setFilterApplied(true)
+            setJobFilter("Contract")
+        }
+
         setSearched(`search=${URL}`)
     }
 
     const handleInputChange = (e) => {
         setURL(e.target.value)
+    }
+
+    const handleFullTimeChange = (e) => {
+        setFullTimeChecked(e.target.checked)
+    }
+
+    const handlePartTimeChange = (e) => {
+        setPartTimeChecked(e.target.checked)
+    }
+
+    const handleContractsChange = (e) => {
+        setContractsChecked(e.target.checked)
     }
 
     return (
@@ -33,7 +74,9 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                                 className="form-check-input"
                                 type="checkbox"
                                 id="inlineCheckbox1"
-                                value="FullTime"
+                                value="Full Time"
+                                checked={fullTimeChecked}
+                                onChange={handleFullTimeChange}
                             >
                             </input>
                             <label className="form-check-label" htmlFor="inlineCheckbox1">
@@ -45,7 +88,9 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                                 className="form-check-input"
                                 type="checkbox"
                                 id="inlineCheckbox2"
-                                value="PartTime"
+                                value="Part Time"
+                                checked={partTimeChecked}
+                                onChange={handlePartTimeChange}
                             ></input>
                             <label className="form-check-label" htmlFor="inlineCheckbox2">
                                 Part time
@@ -57,6 +102,8 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                                 type="checkbox"
                                 id="inlineCheckbox3"
                                 value="Contracts"
+                                checked={contractsChecked}
+                                onChange={handleContractsChange}
                             ></input>
                             <label className="form-check-label" htmlFor="inlineCheckbox3">
                                 Contracts
@@ -77,9 +124,16 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                          setSearched={setSearched}
                          displayJobs={displayJobs}
                          setDisplayJobs={setDisplayJobs}
+                         fullTimeChecked={fullTimeChecked}
+                         partTimeChecked={partTimeChecked}
+                         contractsChecked={contractsChecked}
+                         jobFilter={jobFilter}
+                         setJobFilter={setJobFilter}
+                         filterApplied={filterApplied}
+                         setFilterApplied={setFilterApplied}
             />
         </>
     )
 }
 
-export default SearchBar
+export default Search

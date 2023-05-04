@@ -1,17 +1,14 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
-import './index.css'
-import {useState} from "react";
+import "./index.css"
 
-const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDisplayJobs, URL, setURL}) => {
+const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFilter, setJobFilter, filterApplied, setFilterApplied}) => {
 
-    const [jobFilter, setJobFilter] = useState("")
-    const [filterApplied, setFilterApplied] = useState(false)
 
     const heading = searched ? "Search results" : "Most recent jobs"
 
     const handleBackToRecentJobs = () => {
         setSearched("")
-        document.querySelector('input').value = ""
+        document.querySelector("input").value = ""
         setFilterApplied(false)
     }
 
