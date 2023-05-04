@@ -36,8 +36,8 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
             setFilterApplied(true)
             setJobFilter("Contract")
         }
-
         setSearched(`search=${URL}`)
+        setSearched(searched + " ")
     }
 
     const handleInputChange = (e) => {
