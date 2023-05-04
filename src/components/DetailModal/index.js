@@ -15,9 +15,9 @@ const DetailModal = ({data, skills, loading, error}) => {
                                     aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            {/*{loading && <p>Loading...</p>}*/}
-                            {/*{error && <p>Error: {error.message}</p>}*/}
-                            {/*{!loading && !error && (*/}
+                            {loading && <p>Loading...</p>}
+                            {error && <p>Error: {error.message}</p>}
+                            {!loading && !error && (
                             <div className="container">
                                 <div
                                         className="d-flex flex-sm-column flex-lg-row align-items-start bg-primary text-white py-5 fs-4">
@@ -70,6 +70,7 @@ const DetailModal = ({data, skills, loading, error}) => {
                                         <p>{data.job_description}</p>
                                     </div>
                                 </div>
+                                )}
                             </div>
                         </div>
                     </div>
