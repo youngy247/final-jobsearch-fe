@@ -46,7 +46,7 @@ const DetailModal = ({data, setData, skills, setSkills, selectedID}) => {
 
                                             <tbody>
                                             <tr>
-                                                <td>£{data.salary ? data.salary.toLocaleString() : "Not specified"}</td>
+                                                <td>{data.salary ? "£" + data.salary.toLocaleString() : "Not specified"}</td>
                                                 <td>{data.type ? data.type.replace(' ', '\u00A0') : "Not specified"}</td>
                                                 <td>{new Date(data.posted).toLocaleDateString()}</td>
                                                 <td>
