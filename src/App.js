@@ -59,7 +59,8 @@ const App = () => {
             <DetailModal data={data}
                          skills={skills}
                          loading={loading}
-                         error={error}/>
+                         error={error}
+            />
             <Footer/>
         </>
     )

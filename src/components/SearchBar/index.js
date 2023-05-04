@@ -1,9 +1,8 @@
 import './index.css'
-import {useState} from "react";
+import {useState} from "react"
 import DisplayJobs from "../DisplayJobs"
 
 const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched}) => {
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,14 +28,14 @@ const SearchBar = ({setURL, URL, setSelectedID, displayJobs, setDisplayJobs, sea
                                 onChange={handleInputChange}
                             ></input>
                         </div>
-
                         <div className="form-check form-check-inline">
                             <input
                                 className="form-check-input"
                                 type="checkbox"
                                 id="inlineCheckbox1"
                                 value="FullTime"
-                            ></input>
+                            >
+                            </input>
                             <label className="form-check-label" htmlFor="inlineCheckbox1">
                                 Full time
                             </label>

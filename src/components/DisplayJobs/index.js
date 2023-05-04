@@ -35,7 +35,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, setDis
                 </thead>
                 <tbody>
                 {displayJobs.map((job, key) => {
-                    const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)) : ""
+                    const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)).toLocaleString() : ""
                     return (
                         <tr key={key}>
                             <td scope="row">
