@@ -7,7 +7,6 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
     const [fullTimeChecked, setFullTimeChecked] = useState(false)
     const [partTimeChecked, setPartTimeChecked] = useState(false)
     const [contractsChecked, setContractsChecked] = useState(false)
-
     const [jobFilter, setJobFilter] = useState("")
     const [filterApplied, setFilterApplied] = useState(false)
     const handleSubmit = (e) => {
@@ -30,6 +29,9 @@ const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searc
         } else if (!fullTimeChecked && partTimeChecked && contractsChecked) {
             setFilterApplied(true)
             setJobFilter("Part time Contract")
+        } else if (fullTimeChecked && !partTimeChecked && contractsChecked) {
+            setFilterApplied(true)
+            setJobFilter("Full time Contract")
         } else {
             setFilterApplied(true)
             setJobFilter("Contract")
