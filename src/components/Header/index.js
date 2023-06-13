@@ -29,7 +29,7 @@ const Header = ({setSearched}) => {
                             <a className="nav-link" href="#" onClick={handleNavBarButton} data-query="type[]=Contract">Contract</a>
                         </li>
                     </ul>
-                    <button className="btn btn-outline-success" type="submit">Post a job</button>
+                    <button className="btn btn-outline-success invisible" type="submit">Post a job</button>
                 </div>
             </div>
         </nav>
