@@ -2,11 +2,11 @@ import "./index.css"
 import DisplayJobs from "../DisplayJobs"
 import React, { useState } from "react"
 
-const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched }) => {
+const Search = ({ setURL, URL, setSelectedID, displayJobs, setDisplayJobs, searched, setSearched,
+                    fullTimeChecked, setFullTimeChecked, partTimeChecked, setPartTimeChecked,
+                    contractsChecked, setContractsChecked}) => {
 
-    const [fullTimeChecked, setFullTimeChecked] = useState(false)
-    const [partTimeChecked, setPartTimeChecked] = useState(false)
-    const [contractsChecked, setContractsChecked] = useState(false)
+
     const [jobFilter, setJobFilter] = useState("")
     const [filterApplied, setFilterApplied] = useState(false)
     const handleSubmit = (e) => {
