@@ -73,7 +73,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFil
                                     )}
                                 </td>
                                 <td className="row-span-2">
-                                    {job.salary ? `£${job.salary}` : ""}
+                                    {job.salary ? `£${job.salary}` : "Not specified"}
                                 </td>
                                 <td className="row-span-2">
                                     {job.skills.map((skill, index) => {
