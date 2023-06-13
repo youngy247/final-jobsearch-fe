@@ -17,9 +17,9 @@ const App = () => {
     const [searched, setSearched] = useState("")
 
     useEffect(() => {
-        let url = "http://localhost:8080/jobs/recent"
+        let url = "https://io-job-search-api.onrender.com/jobs/recent"
         if (searched) {
-            url = `http://localhost:8080/jobs?${searched}`
+            url = `https://io-job-search-api.onrender.com/jobs?${searched}`
         }
         fetch(url)
             .then((res) => res.json())
@@ -30,7 +30,7 @@ const App = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("http://localhost:8080/jobs/" + selectedID)
+        fetch("https://io-job-search-api.onrender.com/jobs/" + selectedID)
             .then(res => res.json())
             .then(data => {
                 setData(data)
