@@ -44,7 +44,7 @@ const DisplayJobs = ({setSelectedID,  searched, setSearched, displayJobs, jobFil
                 </thead>
                 <tbody>
                 {displayJobs.map((job, key) => {
-                    const roundedSalary = job.salary ? Number(job.salary.toPrecision(2)).toLocaleString() : ""
+                    const roundedSalary = typeof job.salary === 'number' ? Number(job.salary.toPrecision(2)).toLocaleString() : "";
                     if (jobFilter.includes(job.type) || filterApplied === false) {
                         return (
                             <tr key={key}>
